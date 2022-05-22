@@ -1,0 +1,4 @@
+nombre=1, apellidos=1, DNI=1 ES12345678912345678912
+nombre=2, apellidos=2, DNI=2 ES12987654321987654321
+nombre=3, apellidos=3, DNI=3 ES12312345678912345678
+Num cuentas: 3
