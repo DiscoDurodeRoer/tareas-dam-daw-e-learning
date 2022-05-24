@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>	
+	<libro año="1994">
+		<titulo>TCP/IP Illustrated</titulo>
+		<autor>
+			<apellido>Stevens</apellido>
+			<nombre>W.</nombre>
+		</autor>
+		<editorial>Addison-Wesley</editorial>
+		<precio> 65.95</precio>
+	</libro>
+	<libro año="1992">
+		<titulo>Advan Programming for Unix environment</titulo>
+		<autor>
+			<apellido>Stevens</apellido>
+			<nombre>W.</nombre>
+		</autor>
+		<editorial>Addison-Wesley</editorial>
+		<precio>65.95</precio>
+	</libro>
+	<libro año="2000">
+		<titulo>Data on the Web</titulo>
+		<autor>
+			<apellido>Abiteboul</apellido>
+			<nombre>Serge</nombre>
+		</autor>
+		<autor>
+			<apellido>Buneman</apellido>
+			<nombre>Peter</nombre>
+		</autor>
+		<autor>
+			<apellido>Suciu</apellido>
+			<nombre>Dan</nombre>
+		</autor>
+		<editorial>Morgan Kaufmann editorials</editorial>
+		<precio>39.95</precio>
+	</libro>
+</libros>
