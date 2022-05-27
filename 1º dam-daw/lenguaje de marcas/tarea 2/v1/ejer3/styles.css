@@ -1,0 +1,16 @@
+
+body{
+    background: red;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.center{
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+}
+
+

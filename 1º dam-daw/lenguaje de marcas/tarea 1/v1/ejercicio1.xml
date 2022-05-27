@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+	<persona>
+		<nombre>Fernando</nombre>
+		<apellidos>Ureña Gomez</apellidos>
+		<direccion>Calle falsa 123</direccion>
+		<telefonos>
+			<casa>123456789</casa>
+			<trabajo>123456788</trabajo>
+			<movil>654123456</movil>
+		</telefono>
+	</persona>
+	
+
+</agenda>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+
+    <form action="mailto:reservas@mihotel.com">
+
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>Mi Hotel</h1>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Nombre</p>
+                </td>
+                <td>
+                    <input type="text" name="nombre" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Apellidos</p>
+                </td>
+                <td>
+                    <input type="text" name="apellidos" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Telefono</p>
+                </td>
+                <td>
+                    <input type="tel" name="telefono" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Email</p>
+                </td>
+                <td>
+                    <input type="email" name="email" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Numero noches</p>
+                </td>
+                <td>
+                    <input type="number" name="nombre" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Fecha entrada: </p>
+                </td>
+                <td>
+                    <p>elige un dia</p>
+                    <select name="dia">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        </var>
+                    </select>
+                    <p>Elige un mes</p>
+                    <select name="mes">
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="septiembre">Septiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Tipo habitacion</p>
+                    <input type="radio" name="tipo_hab" value="h_simple" checked />Habitación simple<br />
+                    <input type="radio" name="tipo_hab" value="h_doble" />Habitación doble<br />
+                    <input type="radio" name="tipo_hab" value="h_matrimonio" />Habitación matrimonio<br />
+                </td>
+                <td>
+                    <p>Complementos</p>
+                    <input type="checkbox" name="comp[]" />Desayuno<br />
+                    <input type="checkbox" name="comp[]" />Comida<br />
+                    <input type="checkbox" name="comp[]" />Cena<br />
+                    <input type="checkbox" name="comp[]" />Cama supletoria<br />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <textarea name="comentarios"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Enviar" />
+                </td>
+                <td>
+                    <input type="reset" value="Resetear" />
+                </td>
+            </tr>
+
+
+        </table>
+
+    </form>
+
+
+</body>
+
+</html>

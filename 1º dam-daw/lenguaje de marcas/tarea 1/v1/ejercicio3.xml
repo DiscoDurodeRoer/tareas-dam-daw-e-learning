@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulo>
+	<nombre>Lenguajes de Marcas y Sistemas de Gestión de Información</nombre>
+	<fecha_inicio>30 de septiembre de 2010</fecha_inicio>
+	<fecha_fin>30 de junio de 2011</fecha_fin>
+	<horas>4</horas>
+	<obligatorio>Si</obligatorio>
+	
+	<alumnos>
+		<alumno>
+			<nombre>Ana</nombre>
+			<apellidos>Fernández Gutiérrez</apellidos>
+			<nif>16965696L</nif>
+			<telefono>789654321 </telefono>
+			<email>ana.fdezgtrrez@hotmail.com</email>
+			<direccion> 
+				<calle>C/ El Percebe</calle>
+				<numero>13</numero>
+				<ciudad>Santander</ciudad> 
+				<codigo_postal>39302</codigo_postal>
+			</direccion>
+			
+		</alumno>
+		
+		<alumno>
+			<nombre>Pepito</nombre>
+			<apellidos>Grillo</apellidos>
+			<nif>98765432H</nif>
+			<telefono>656566555</telefono>
+			<email>yhyh@yahoo.com</email>
+			<direccion> 
+				<calle>Avd. El Pez</calle>
+				<numero>13</numero>
+				<ciudad>Suances</ciudad> 
+				<codigo_postal>39401</codigo_postal>
+			</direccion>
+			<nota>Apto</nota>
+			<faltas_asistencias>0</faltas_asistencias>
+			
+		</alumno>
+	</alumnos>
+	
+</modulo>

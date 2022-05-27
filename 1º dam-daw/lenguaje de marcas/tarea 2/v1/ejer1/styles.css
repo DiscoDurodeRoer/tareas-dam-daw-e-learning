@@ -1,0 +1,12 @@
+
+ul{
+    list-style-type: square;
+}
+
+.center{
+    text-align: center;
+}
+
+ul.no-icon{
+    list-style-type: none;
+}
