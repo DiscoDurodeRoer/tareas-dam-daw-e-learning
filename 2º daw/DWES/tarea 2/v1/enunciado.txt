@@ -1,0 +1,3 @@
+Deberá crear una página .php llamada LetrasTexto.php, esta tendrá un formulario con un campo de tipo TextArea, llamado 'Texto' en el que se pueda introducir un texto de hasta 10 lineas máximo. Debajo del textarea habrá un botón de envío(Submit) y otro para limpiar el contenido del campo(Reset).
+
+Al pulsar el botón de Submit los datos del textarea se autoenvíaran a la página la cual, mediante el código Php, deberá procesarlo para mostrar por pantalla una tabla  que contendrá en la primera columna cada una de las letras que aparezcan en el texto y en la segunda el número de veces que esa letra se encuentra en el texto introducido.

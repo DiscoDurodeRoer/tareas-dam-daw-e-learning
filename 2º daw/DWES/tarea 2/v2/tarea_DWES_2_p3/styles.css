@@ -1,0 +1,47 @@
+h3 {
+    text-align: center;
+}
+
+body {
+    background: lightskyblue;
+    margin: 0px 5%;
+}
+
+.buttons{
+    padding: 10px 0px;
+}
+
+.row-form-1 {
+    display: inline-block;
+    width: 10%;
+    color: blue
+}
+
+.row-form-2 {
+    display: inline-block;
+    width: 80%;
+}
+
+.row-list-1 {
+    display: inline-block;
+    width: 15%;
+    color: blue
+}
+
+.row-list-2 {
+    display: inline-block;
+    width: 75%;
+    color: blue
+}
+
+.btn-add{
+    color: blue;
+}
+
+.btn-reset{
+    color: forestgreen;
+}
+
+.btn-clear{
+    color: red;
+}
