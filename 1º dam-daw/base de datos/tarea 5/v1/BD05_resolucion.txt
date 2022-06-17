@@ -1,0 +1,40 @@
+-- 1
+INSERT INTO PROFESORADO VALUES(1, 'NURIA', 'ANERO GONZALEZ', '58328033X', 'MATEMATICAS', '22/02/1972', 4);
+-- 2
+INSERT INTO PROFESORADO VALUES (2, 'MARIA LUISA', 'FABRE BERDUN', '51083099F', 'TECNOLOGIA', '31/03/1975', 4);
+
+INSERT INTO PROFESORADO (Codigo, Nombre, Apellidos, Especialidad, Fecha_Nac, Antiguedad) VALUES (3, 'JAVIER', 'JIMENEZ HERNANDO', 'LENGUA', '04/05/1969', 10);
+
+INSERT INTO PROFESORADO VALUES (4, 'ESTEFANIA', 'FERNANDEZ MARTINEZ', '19964324W', 'INGLES', '22/06/1973', 5);
+
+INSERT INTO PROFESORADO (Codigo, Nombre, Apellidos) VALUES (5, 'JOSE M.', 'ANERO PAYAN');
+
+-- 3 (Grafico)
+
+-- 4
+
+UPDATE PROFESORADO SET fecha_nac = '22/06/1974', antiguedad = 4 WHERE nombre = 'ESTEFANIA';
+
+-- 5
+
+UPDATE PROFESORADO SET antiguedad = antiguedad + 1; 
+
+-- 6 (Grafico)
+
+-- 7
+
+DELETE FROM ALUMNADO WHERE cod_curso = 3;
+
+-- 8
+
+INSERT INTO alumnado_nuevo SELECT nombre, Apellidos, Sexo, Fecha_Nac FROM alumnado;
+
+-- 9
+
+UPDATE CURSOS SET max_alumn = (SELECT COUNT(*) FROM ALUMNADO WHERE cod_curso = 2) WHERE codigo = 2;
+
+-- 10
+
+DELETE FROM ALUMNADO WHERE cod_curso IN (SELECT codigo FROM cursos WHERE cod_profe = (SELECT codigo from profesorado WHERE nombre = 'NURIA'))
+
+

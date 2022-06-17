@@ -1,0 +1,34 @@
+create or replace trigger controlar_agentes
+before insert or update on agentes FOR EACH ROW
+begin
+
+    if LENGTH(:new.clave) < 6 then
+        raise_application_error(-20001, 'La clave no puede ser menor que 6');
+    end if;
+    
+    if not(:new.habilidad >= 0 and :new.habilidad <= 9) then
+        raise_application_error(-20002, 'La habilidad debe estar entre 0 y 9');
+    end if;
+    
+    if :new.categoria not in (0,1,2) then
+        raise_application_error(-20003, 'La categoria debe estar entre 0,1 o 2');
+    end if;
+    
+    if :new.categoria = 2 and :new.familia is not null and :new.oficina is null then
+        raise_application_error(-20004, 'Un agente de categoria 2 no puede pertenecer a una familia y debe pertenecer a una oficina');
+    end if;
+    
+    if :new.categoria = 1 and :new.oficina is not null and :new.familia is null then
+        raise_application_error(-20004, 'Un agente de categoria 1 no puede pertenecer a una oficina y debe pertenecer a una familia');
+    end if;
+    
+    if :new.oficina is not null and :new.familia is not null then
+        raise_application_error(-20004, 'Un agente no puede pertenecer a una oficina y a una familia a la vez');
+    end if;
+
+end;
+/
+
+insert into agentes values(700, 'agente', 'usuario1', '123456', 0, 2, null, 3);
+
+

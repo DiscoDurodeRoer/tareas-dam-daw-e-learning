@@ -1,0 +1,29 @@
+create or replace trigger DISP_DETALLEPEDIDOS
+before insert or update on e_detallepedidos for each row
+declare
+    v_stock_producto e_productos.cantidadenstock%type;
+    v_nombre_producto e_productos.nombreproducto%type;
+begin
+
+    select cantidadenstock into v_stock_producto
+    from e_productos
+    where codigoproducto = :new.codigoproducto;
+    
+    
+    
+    if v_stock_producto < :new.unidadespedidas then
+    
+        select nombreproducto into v_nombre_producto
+        from e_productos
+        where codigoproducto = :new.codigoproducto;
+        
+        raise_application_error(-20001, 'Producto ' || v_nombre_producto || ' no tiene suficiente stock');
+    end if;
+    
+exception
+    when no_data_found then
+        raise_application_error(-20002, 'Producto no encontrado');
+end;
+/
+
+INSERT INTO E_DETALLEPEDIDOS VALUES(2,5,10,5);
