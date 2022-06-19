@@ -1,0 +1,208 @@
+-- 1
+
+SELECT nombre_med, stock, precio_unit, (stock * precio_unit) as total
+FROM m_medicamentos
+WHERE stock > 100 AND conreceta = 'S';
+
+-- 2
+SELECT nombre_med as "Nombre del medicamento"
+FROM m_medicamentos m, m_familias f, m_presentaciones p
+WHERE m.id_pres = p.id_pres AND m.id_fam = f.id_fam
+AND upper(p.nombre_pres) = 'COMPRIMIDOS' and upper(f.nombre_fam) = 'ANTIBIÓTICOS';
+
+-- 3
+SELECT med.poblacion, med.centro_salud, m.nombre_med, lab.nombre_lab, vm.fecha_venta, vm.unidades, m.precio_unit, (vm.unidades * m.precio_unit) as total
+FROM m_medicamentos m, m_medicos med, m_laboratorios lab, m_ventas_med vm, m_ventas_recetas vr
+WHERE m.id_med = vm.id_med and m.id_lab = lab.id_lab and med.dnim = vr.dnim and vr.id_venta = vm.id_venta
+and vm.fecha_venta BETWEEN '01/10/2016' AND '31/12/2016' AND upper(m.nombre_med) LIKE '%MEDICAMENTO ANTIBIÓTICO%'
+order by  med.poblacion, med.centro_salud, m.nombre_med,  vm.fecha_venta;
+
+
+
+
+
+-- 4
+
+select centro_salud, count(*)
+FROM m_pacientes
+group by centro_salud
+having count(*) > 2
+order by centro_salud;
+
+
+-- 5
+
+SELECT nombre_med as "Nombre Medicamento", stock
+FROM m_medicamentos m, m_laboratorios l, m_presentaciones p
+WHERE m.id_pres = p.id_pres AND l.id_lab = m.id_lab
+AND upper(p.nombre_pres) = 'JARABE' AND upper(l.nombre_lab) LIKE '%REGIONAL%'
+
+-- 6
+
+SELECT DISTINCT nombre_med as "Nombre Medicamento", l.nombre_lab, stock
+FROM m_medicamentos m, m_laboratorios l, m_presentaciones p, m_ventas_med vm
+WHERE m.id_pres = p.id_pres AND l.id_lab = m.id_lab AND m.id_med = vm.id_med
+AND upper(p.nombre_pres) = 'JARABE' AND upper(l.nombre_lab) LIKE '%REGIONAL%'
+
+-- 7.1
+
+SELECT apellidos, nombre, m.nombre_med as Medicamento
+FROM m_medicos med, m_medicamentos m, m_ventas_med vm, m_ventas_recetas vr
+WHERE med.dnim = vr.dnim and vr.id_venta = vm.id_venta and vm.id_med = m.id_med
+and upper(med.poblacion) = 'CIUDAD REAL' and upper(med.centro_salud) = 'CENTRO SALUD 1'
+
+-- 7.2
+
+SELECT
+    apellidos,
+    nombre,
+    m.nombre_med AS medicamento
+FROM
+         m_medicos med
+    INNER JOIN m_ventas_recetas  vr ON med.dnim = vr.dnim
+    INNER JOIN m_ventas_med vm ON vr.id_venta = vm.id_venta
+    INNER JOIN m_medicamentos m ON vm.id_med = m.id_med
+WHERE
+        upper(med.poblacion) = 'CIUDAD REAL'
+    AND upper(med.centro_salud) = 'CENTRO SALUD 1'
+
+-- 8.1
+
+SELECT nombre_med as MEDICAMENTO, max(m.stock) as STOCK , sum(vm.unidades) as "UNIDADES VENDIDAS"
+FROM m_medicamentos m, m_ventas_med vm, m_familias f
+WHERE m.id_med = vm.id_med and m.id_fam = f.id_fam
+and upper(f.nombre_fam) = 'ANTIINFLAMATORIOS'
+group by nombre_med
+order by nombre_med;
+
+-- 8.2
+
+SELECT nombre_med as MEDICAMENTO, max(m.stock) as STOCK , sum(vm.unidades) as "UNIDADES VENDIDAS"
+FROM m_medicamentos m INNER JOIN m_ventas_med vm ON m.id_med = vm.id_med INNER JOIN m_familias f ON m.id_fam = f.id_fam
+WHERE upper(f.nombre_fam) = 'ANTIINFLAMATORIOS'
+group by nombre_med
+order by nombre_med;
+
+-- 9
+
+SELECT nombre_fam, sum(m.stock) as "TOTAL UNIDADES MEDICAMENTOS"
+FROM m_familias f, m_medicamentos m
+WHERE f.id_fam = m.id_fam
+GROUP by nombre_fam
+ORDER BY nombre_fam;
+
+-- 10
+
+SELECT nombre_fam, sum(nvl(m.stock, 0)) as "TOTAL UNIDADES MEDICAMENTOS"
+FROM m_familias f left join m_medicamentos m ON  f.id_fam = m.id_fam
+GROUP by nombre_fam
+ORDER BY nombre_fam;
+
+-- 11
+
+SELECT f.nombre_fam, p.nombre_pres, sum(m.stock) as TOTAL_MEDICAMENTOS
+FROM m_medicamentos m, m_familias f, m_presentaciones p
+WHERE m.id_fam = f.id_fam and m.id_pres = p.id_pres
+GROUP BY f.nombre_fam, p.nombre_pres
+order by f.nombre_fam, p.nombre_pres;
+
+-- 12 
+
+SELECT nombre_fam, sum(vm.unidades) as "NRO MEDICAMENTOS VENDIDOS", sum(m.precio_unit * vm.unidades) as "TOTAL VENTAS"
+FROM m_familias f, m_medicamentos m, m_ventas_med vm
+WHERE m.id_med = vm.id_med and f.id_fam = m.id_fam
+group by nombre_fam
+order by nombre_fam;
+
+-- 13
+
+SELECT nombre_fam, sum(vm.unidades) as "NRO MEDICAMENTOS VENDIDOS", sum(m.precio_unit * vm.unidades) as "TOTAL VENTAS"
+FROM m_familias f, m_medicamentos m, m_ventas_med vm
+WHERE m.id_med = vm.id_med and f.id_fam = m.id_fam
+group by nombre_fam
+having sum(vm.unidades) > 15
+order by nombre_fam;
+
+-- 14
+
+SELECT
+    nombre_fam,
+    SUM(m.precio_unit * vm.unidades)         AS "TOTAL VENTAS",
+    AVG(m.precio_unit * vm.unidades)         AS "MEDIA VENTAS"
+FROM
+    m_familias      f,
+    m_medicamentos  m,
+    m_ventas_med    vm
+WHERE
+        m.id_med = vm.id_med
+    AND f.id_fam = m.id_fam
+GROUP BY
+    nombre_fam
+HAVING
+    AVG(m.precio_unit * vm.unidades) > (
+        SELECT
+            AVG(m2.precio_unit * vm2.unidades)
+        FROM
+            m_medicamentos m2,
+            m_ventas_med vm2
+        WHERE
+            m2.id_med = vm2.id_med
+    )
+ORDER BY
+    nombre_fam;
+
+-- 15
+
+SELECT upper(to_char(vm.fecha_venta, 'Month')) as MES, count(*) as "NRO_VENTAS", sum(m.precio_unit * vm.unidades) as TOTAL_VENTAS
+from m_ventas_med vm, m_medicamentos m
+WHERE vm.id_med = m.id_med
+and m.conreceta = 'N'
+group by upper(to_char(vm.fecha_venta, 'Month'))
+having count(*) > 2;
+
+-- 16
+
+SELECt f.nombre_fam, m.nombre_med, m.stock
+FROM m_familias f, m_medicamentos m
+WHERE f.id_fam = m.id_fam
+AND m.stock = (SELECT min(stock) FROM m_medicamentos WHERE id_fam = f.id_fam)
+
+-- 17 
+
+SELECT nombre_fam || ' : ' || count(*) as "VENTAS REALIZADAS EN OCTUBRE"
+FROM m_familias f, m_medicamentos m, m_ventas_med vm
+WHERE m.id_med = vm.id_med and m.id_fam = f.id_fam
+and upper(nombre_fam) = 'ANTIBIÓTICOS'
+and to_char(vm.fecha_venta, 'mm') = '10'
+group by nombre_fam
+UNION
+SELECT nombre_fam || ' : ' || count(*) as "VENTAS REALIZADAS EN OCTUBRE"
+FROM m_familias f, m_medicamentos m, m_ventas_med vm
+WHERE m.id_med = vm.id_med and m.id_fam = f.id_fam
+and upper(nombre_fam) = 'ANTIINFLAMATORIOS'
+and to_char(vm.fecha_venta, 'mm') = '10'
+group by nombre_fam;
+
+-- 18
+
+select p.apellidos, p.nombre, p.poblacion, 
+sum(vm.unidades) as "SUMA UNIDADES MED. VENDIDOS", 
+sum(m.precio_unit * vm.unidades) as "TOTAL COMPRADO",
+max(vm.fecha_venta)
+FROM m_pacientes p, m_ventas_med vm, m_ventas_recetas vr, m_medicamentos m
+WHERE m.id_med = vm.id_med and vm.id_venta = vr.id_venta and vr.dnip = p.dnip
+group by p.apellidos, p.nombre, p.poblacion
+having count(*) >= 2 ;
+
+-- 19
+
+select t.nombre_fam
+FROM (SELECT nombre_fam, count(*) as num_med
+        FROM m_familias f, m_medicamentos m
+        WHERE m.id_fam = f.id_fam
+        group by nombre_fam) t
+WHERE t.num_med = (SELECT min(t2.num_med) 
+                    FROM (SELECT nombre_fam, count(*) as num_med
+                            FROM m_familias f, m_medicamentos m
+                            WHERE m.id_fam = f.id_fam
+                            group by nombre_fam) t2);
