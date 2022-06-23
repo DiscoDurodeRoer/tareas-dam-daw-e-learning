@@ -1,0 +1,95 @@
+-- 1
+
+SELECT nombreequipo, localidad, provincia, division
+FROM equipos
+WHERE (upper(provincia) = 'CC' and division = 2)  OR (upper(provincia) = 'BA')
+order by division,provincia, localidad, nombreequipo;
+
+-- 2
+
+SELECT apellidos, nombre
+FROM jugadores
+WHERE upper(nombre) LIKE 'V%' OR upper(apellidos) LIKE '%RUEDA%'
+order by apellidos, nombre;
+
+-- 3
+
+SELECT division, localidad, nombreequipo, anio_creacion
+FROM equipos
+WHERE upper(localidad) in ('BADAJOZ', 'DON BENITO', 'CACERES') AND anio_creacion > 2001
+ORDER BY anio_creacion desc;
+
+-- 4
+
+SELECT anio_creacion, count(*) as NUMERO
+FROM equipos
+group by anio_creacion
+having  count(*) > 2
+order by NUMERO desc;
+
+-- 5
+
+SELECT ordenfuerza || 'º' as ORD_FUERZA, 
+to_char(count(*), 'fm00') as NRO_JUG, 
+to_char(min(importe_enc), 'fm00.00') as I_MINIMO, 
+to_char(max(importe_enc), 'fm00.00') as I_MAXIMO,
+to_char(avg(importe_enc), 'fm00.000') as I_MEDIO
+FROM jugadores
+WHERE importe_enc > 0
+group by ordenfuerza || 'º'
+order by ORD_FUERZA;
+
+-- 6
+
+SELECT idjornada, localidad, 
+to_char(fecha, 'DD') || ' de ' || to_char(fecha, 'fmMonth') || ' de ' || to_char(fecha, 'YYYY') as FECHA, 
+to_char(fecha, 'Day') as DIA
+FROM jornadas
+WHERE to_char(fecha, 'd') in ('4', '6')
+
+-- 7
+
+SELECT SUBSTR(e.provincia,1,1) || lower(SUBSTR(e.provincia,2,1)) as PROV,
+upper(e.localidad) || '=>' || e.nombreequipo as LOCALIDAD_Y_EQUIPO,
+j.apellidos || ', ' || SUBSTR(j.nombre, 1, 3) || '.' as APELLIDOS_NOMBRE,
+to_char(j.elo, 'fm0,000') as ELO,
+j.titulo
+FROM equipos e, jugadores j
+WHERE e.idequipo = j.idequipo
+and e.division = 2 and j.titulo is not null
+order by e.provincia, e.localidad, e.nombreequipo;
+
+-- 8
+
+SELECT j.idjugador || '-' || j.apellidos || ', ' || j.nombre as JUGADOR,
+count(*) as NROENC,
+to_char(max(j.importe_enc), 'fm00.00') as IMPORTE,
+to_char(count(*) * max(j.importe_enc), 'fm000.00') as TOTAL
+FROM jugadores j, enc_jugadores enc
+WHERE j.idjugador = enc.idjugador
+group by j.idjugador || '-' || j.apellidos || ', ' || j.nombre
+having count(*) * max(j.importe_enc) > 350
+order by TOTAL desc;
+
+-- 9
+
+SELECT division, e.nombreequipo, 
+LPAD(sum(enc.puntos), 2, '*') as TOTAL_PUNTOS, 
+to_char(sum(enc.average), 'fm00.0') as T_AVERAGE,
+LPAD('*', sum(enc.average) - 1, '*') as GRAFICO 
+FROM equipos e, encuentros enc
+WHERE e.idequipo = enc.idequipo
+GROUP BY division, nombreequipo
+order by division, sum(enc.puntos) desc, sum(enc.average);
+
+-- 10
+
+SELECT count(*) as GANADOS, 
+j.apellidos || ', ' || j.nombre as APELLIDOS_Y_NOMBRE,
+e.nombreequipo
+FROM jugadores j, equipos e, enc_jugadores enc
+WHERE j.idjugador = enc.idjugador and j.idequipo = e.idequipo
+and enc.puntos = 1 and e.division = 1
+group by j.apellidos || ', ' || j.nombre, e.nombreequipo
+having count(*) > 2
+order by  count(*) desc, j.apellidos || ', ' || j.nombre asc;
