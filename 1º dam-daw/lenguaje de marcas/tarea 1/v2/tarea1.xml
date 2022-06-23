@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standladone="yes" ?>
+<servicio>
+	<programa>Apache</programa>
+	<fecha-creacion>10/10/2021</fecha-creacion>
+	<fecha-actualizacion>20/10/2021</fecha-actualizacion>
+	<alojamiento CIF="B123456789">
+		<nombre>Webempresa</nombre>
+		<precio moneda="€">90.5</precio>
+	</alojamiento>
+	<servidores-virtuales>
+		<servidor-virtual id="123-ABCDE">
+			<dominio>https://www.discoduroderoer.es</dominio>
+			<directorio>/home/discoduroderoer</directorio>
+			<modo-seguro>true</modo-seguro>
+			<incidentes>
+				<incidente>
+					<descripcion>Incidente 1</descripcion>
+					<solucion-adoptada>Solucion 1</solucion-adoptada>
+				</incidente>
+				<incidente>
+					<descripcion>Incidente 2</descripcion>
+					<solucion-adoptada>Solucion 2</solucion-adoptada>
+				</incidente>
+			</incidentes>
+		</servidor-virtual>
+		<servidor-virtual  id="456-FGHIJ">			
+			<dominio>https://www.google.es</dominio>
+			<directorio>/home/google</directorio>
+			<modo-seguro>false</modo-seguro>
+		</servidor-virtual>
+	</servidores-virtuales>
+</servicio>
