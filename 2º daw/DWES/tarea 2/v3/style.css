@@ -1,0 +1,38 @@
+body {
+    background-color: #f57070;
+}
+
+.agenda {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.agenda h4 {
+    text-align: center;
+}
+
+button, input[type="text"] {
+    border-radius: 4px;
+    border-color: #FFF;
+    background-color: #FFF;
+}
+
+table tr td, button[name="aniadir"] {
+    color: blue;
+}
+
+.aviso {
+    color: #FFF;
+}
+
+button[name="aniadir"] {
+    margin-top: 10px;
+}
+
+button[type="reset"] {
+    color: green;
+}
+
+button[name="vaciar"] {
+    color: red;
+}
