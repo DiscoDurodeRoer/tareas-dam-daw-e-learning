@@ -1,0 +1,11 @@
+.datos-personales label {
+    display: block;
+}
+
+p.no-margin {
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
