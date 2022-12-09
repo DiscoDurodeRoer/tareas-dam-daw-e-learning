@@ -9,11 +9,14 @@ public class Prog04Ejer05 {
         Scanner sn = new Scanner(System.in);
         sn.useDelimiter("\n");
         
+        // Clave a adivinar
         String clave = "eureka";
         
+        // Pedimos una clave
         System.out.println("Escribe una clave");
         String claveUsuario = sn.next();
         
+        // Comprobamos si coinciden las claves
         if(clave.equals(claveUsuario)){
             System.out.println("Has acertado");
         }else{
