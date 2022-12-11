@@ -1,0 +1,74 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Elemento impresoras -->
+    <xs:element name="impresoras">
+        <!-- Como contiene otros elementos, es un tipo complejo -->
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Elemento impresora, minimo 1 -->
+                <xs:element name="impresora" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Elemento marca, tipo string -->
+                            <xs:element name="marca" type="xs:string" />
+                            <!-- Elemento modelo, tipo string -->
+                            <xs:element name="modelo" type="xs:string" />
+                            <!-- Elemento peso -->
+                            <xs:element name="peso">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:decimal">
+                                        <!-- Mayor que 0 -->
+                                        <xs:minExclusive value="0" />
+                                        <!-- Solo dos deciamales -->
+                                        <xs:fractionDigits value="2" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Elemento tamanios -->
+                            <xs:element name="tamanios">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- Elemento tamanio, sin número máximo de elementos -->
+                                        <xs:element name="tamanio" maxOccurs="unbounded" type="xs:string" />
+                                    </xs:sequence> 
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- Elemento cartucho -->
+                            <xs:element name="cartucho">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <!-- Debe cumplir el siguiente formato -->
+                                        <xs:pattern value="C-[0-9]{3}[A-Z]{1,2}" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Elemento enred, opcional -->
+                            <xs:element name="enred" minOccurs="0" />
+                        </xs:sequence>
+                        <!-- Atributo numSerie, tipo ID y requerido -->
+                        <xs:attribute name="numSerie" type="xs:ID" use="required" />
+                        <!-- Atributo compra, opcional -->
+                        <xs:attribute name="compra" use="optional">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <!-- Mayor que 0 -->
+                                    <xs:minExclusive value="0" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <!-- Atributo tipo, requerido -->
+                        <xs:attribute name="tipo" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <!-- Solo puede ser uno de estos valores -->
+                                    <xs:enumeration value="matricial" />
+                                    <xs:enumeration value="láser" />
+                                    <xs:enumeration value="tinta" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

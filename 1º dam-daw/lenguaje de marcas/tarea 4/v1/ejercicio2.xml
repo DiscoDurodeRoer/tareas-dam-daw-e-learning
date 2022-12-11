@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE torneo SYSTEM "ejercicio2.dtd">
+<torneo anio="2022" anteriorGanador="P1">
+    <participantes>
+        <participante idP="P1" pareja="P2">
+            <nombre>Manuel Perez</nombre>
+            <edad>23</edad>
+            <pais>España</pais>
+            <cabezaDeSerie>SI</cabezaDeSerie>
+        </participante>
+        <participante idP="P2" pareja="P1">
+            <nombre>Manuel Gómez</nombre>
+            <edad>25</edad>
+            <pais>España</pais>
+            <cabezaDeSerie>NO</cabezaDeSerie>
+        </participante>
+        <participante idP="P3" pareja="P4">
+            <nombre>Ana Puertas</nombre>
+            <edad>23</edad>
+            <pais>España</pais>
+            <cabezaDeSerie>SI</cabezaDeSerie>
+        </participante>
+        <participante idP="P4" pareja="P3">
+            <nombre>Paco Fraile</nombre>
+            <edad>45</edad>
+            <pais>España</pais>
+            <cabezaDeSerie>NO</cabezaDeSerie>
+        </participante>
+    </participantes>
+</torneo>
