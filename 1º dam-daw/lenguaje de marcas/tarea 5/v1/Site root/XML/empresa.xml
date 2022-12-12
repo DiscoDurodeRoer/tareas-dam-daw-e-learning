@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- <?xml-stylesheet href="../XSL/empresa05.xsl" type="text/xsl" ?> -->
+<empresa nombre="El Corte Inglés">
+    <departamento nombre="Investigación &amp; Desarrollo">
+        <empleado nacionalidad="inglés">
+            <nombre>Juan Díaz</nombre>
+            <trabajo>Analista</trabajo>
+            <sueldo>2000.00</sueldo>
+        </empleado>
+        <empleado>
+            <nombre>Fedra Domínguez</nombre>
+            <trabajo>Diseñador</trabajo>
+            <sueldo>2500.00</sueldo>
+        </empleado>
+        <empleado>
+            <nombre>Javier García</nombre>
+            <trabajo>Programador</trabajo>
+            <sueldo>3100.00</sueldo>
+        </empleado>
+        <empleado>
+            <nombre>Pedro Martín</nombre>
+            <trabajo>Programador</trabajo>
+            <sueldo>2800.00</sueldo>
+        </empleado>
+    </departamento>
+    <departamento nombre="Marketing">
+        <empleado>
+            <nombre>Laura Garijo</nombre>
+            <trabajo>Redactor</trabajo>
+            <sueldo>2530.00</sueldo>
+        </empleado>
+        <empleado>
+            <nombre>Antonio Prieto</nombre>
+            <trabajo>Editor de Contenido</trabajo>
+            <sueldo>1900.00</sueldo>
+        </empleado>
+        <empleado>
+            <nombre>María Mateos</nombre>
+            <trabajo>Gerente de Marketing</trabajo>
+            <sueldo>5000.00</sueldo>
+        </empleado>
+    </departamento>
+</empresa>

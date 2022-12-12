@@ -1,0 +1,57 @@
+table {
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+tr, td, th {
+    border: 1px solid #000;
+}
+
+th, td {
+    width: 165px;
+}
+
+td.number {
+    text-align: right;
+}
+
+th {
+    text-align: center;
+    background-color: aqua;
+}
+
+.info {
+    border: 1px solid orange;
+    background-color: gray;
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.info li {
+    text-align: left;
+}
+
+tr.gt-2700 td {
+    background-color: #66CCFF;
+}
+
+tr.lt-2700 td {
+    background-color: #00CC99;
+}
+
+.nationality{
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+caption {
+    color: blue;
+    font-style: italic;
+    font-weight: bold;
+}
