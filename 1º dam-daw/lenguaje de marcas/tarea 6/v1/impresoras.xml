@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<impresoras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio1.xsd">
+    <impresora numSerie="I12345" compra="2015" tipo="láser">
+        <marca>EPSON</marca>
+        <modelo>EPL300</modelo>
+        <peso>4.52</peso>
+        <tamanios>
+            <tamanio>A4</tamanio>
+            <tamanio>A5</tamanio>
+        </tamanios>
+        <cartucho>C-123BV</cartucho>
+        <enred/>
+    </impresora>
+    <impresora numSerie="I67891" compra="2022" tipo="matricial">
+        <marca>HP</marca>
+        <modelo>LaserJet 2410</modelo>
+        <peso>3.2</peso>
+        <tamanios>
+            <tamanio>A4</tamanio>
+        </tamanios>
+        <cartucho>C-456P</cartucho>
+        <enred/>
+    </impresora>
+</impresoras>
