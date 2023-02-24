@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+  <book category="COOKING">
+    <title>Everyday Italian</title>
+    <author>Giada De Laurentiis</author>
+    <year>2005</year>
+    <price>49.99</price>
+  </book>
+  <book category="WEB" soldout="true">
+    <title lang="en">XQuery Kick Start</title>
+    <author>James McGovern</author>
+    <year>2001</year>
+    <price>30.00</price>
+  </book>
+  <book category="COOKING" soldout="true">
+    <title lang="en">Learning Cake</title>
+    <author>Erik T. Ray</author>
+    <year>2003</year>
+    <price>39.95</price>
+    <ebook format="epub"/>
+  </book>
+  <sale ident="v00001">
+    <refbook>Learning Cake</refbook>
+    <date>2021-11-30</date>
+  </sale>
+  <sale ident="v00002">
+    <refbook>XQuery Kick Start</refbook>
+    <date>2020-12-05</date>
+  </sale>
+</bookstore>
