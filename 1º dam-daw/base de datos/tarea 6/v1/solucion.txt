@@ -1,34 +1,95 @@
+create or replace procedure CambiarAgentesFamilia(p_id_FamiliaOrigen familias.identificador%type, p_id_FamiliaDestino familias.identificador%type)
+as
+  numAgentes number(8);
+  numFamiliaOrigen number(8);
+  numFamiliaDestino number(8);
+  nombreFamiliaOrigen familias.nombre%type;
+  nombreFamiliaDestino familias.nombre%type;
+  familias_iguales exception;
+begin
+  
+    if p_id_FamiliaOrigen = p_id_FamiliaDestino THEN
+        raise familias_iguales;
+    end if;
+  
+    select count(*) into numFamiliaOrigen
+    from familias
+    where identificador = p_id_FamiliaOrigen;
+    
+    if numFamiliaOrigen = 0 then 
+        raise_application_error(-20001,'No existe la familia de origen');
+    end if;
+    
+    select count(*) into numFamiliaDestino
+    from familias
+    where identificador = p_id_FamiliaDestino;
+    
+    if numFamiliaDestino = 0 then 
+        raise_application_error(-20002,'No existe la familia de destino');
+    end if;
+    
+    select nombre into nombreFamiliaOrigen
+    from familias
+    where identificador = p_id_FamiliaOrigen;
+    
+    select nombre into nombreFamiliaDestino
+    from familias
+    where identificador = p_id_FamiliaDestino;
+
+    select count(*) into numAgentes
+    from agentes
+    where familia = p_id_FamiliaOrigen;
+
+    UPDATE agentes SET familia = p_id_FamiliaDestino WHERE familia = p_id_FamiliaOrigen;
+
+    DBMS_OUTPUT.PUT_LINE('Se han translado ' || numAgentes || ' agentes de la familia ' || nombreFamiliaOrigen || ' a la familia ' || nombreFamiliaDestino);
+exception
+  when familias_iguales then
+    DBMS_OUTPUT.PUT_LINE('Las familias no pueden ser iguales');
+
+end;
+/
+
+begin
+    CambiarAgentesFamilia(112311, 11221);
+end;
+/
+
+
+-----------------------------
+
+
+
 create or replace trigger controlar_agentes
 before insert or update on agentes FOR EACH ROW
 begin
 
     if LENGTH(:new.clave) < 6 then
-        raise_application_error(-20001, 'La clave no puede ser menor que 6');
+        raise_application_error(-20001,'La clave no puede ser menor que 6');
     end if;
-    
-    if not(:new.habilidad >= 0 and :new.habilidad <= 9) then
-        raise_application_error(-20002, 'La habilidad debe estar entre 0 y 9');
+      
+    if not (:new.habilidad >= 0 and :new.habilidad <= 9) then
+        raise_application_error(-20002,'La habilidad debe estar entre 0 y 9');
     end if;
     
     if :new.categoria not in (0,1,2) then
-        raise_application_error(-20003, 'La categoria debe estar entre 0,1 o 2');
+        raise_application_error(-20003,'La categoria debe ser 0,1 o 2');
     end if;
     
     if :new.categoria = 2 and :new.familia is not null and :new.oficina is null then
-        raise_application_error(-20004, 'Un agente de categoria 2 no puede pertenecer a una familia y debe pertenecer a una oficina');
+        raise_application_error(-20004,'Un agente de categoria 2 no puede pertenecer a una familia y debe pertenercer a una oficina');
     end if;
     
     if :new.categoria = 1 and :new.oficina is not null and :new.familia is null then
-        raise_application_error(-20004, 'Un agente de categoria 1 no puede pertenecer a una oficina y debe pertenecer a una familia');
+        raise_application_error(-20005,'Un agente de categoria 1 no puede pertenecer a una oficina y debe pertenercer a una familia');
     end if;
     
-    if :new.oficina is not null and :new.familia is not null then
-        raise_application_error(-20004, 'Un agente no puede pertenecer a una oficina y a una familia a la vez');
+    if :new.categoria = 0 and :new.oficina is not null and :new.familia is not null then
+        raise_application_error(-20006,'Un agente no puede pertenecer a una oficina y a una familia a la vez');
     end if;
-
 end;
 /
 
-insert into agentes values(700, 'agente', 'usuario1', '123456', 0, 2, null, 3);
+insert into agentes values (715, 'agente 1', 'usuario17', '123455', 0, 0, 31,null );
 
-
+select * from agentes;
