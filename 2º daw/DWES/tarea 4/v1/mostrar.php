@@ -29,26 +29,35 @@
 
     <div class="container bg-success mt-3 w-50 p-3 text-light">
 
-        <h4><i class="fa-solid fa-user-gear"></i> Preferencias</h4>
-
-        <?php
-            if(isset($error)){
-                ?>
-                <p class="text-danger">Debes fijar primero las preferencias</p>
+        <div class="row">
+            <div class="col-12">
+                <h4><i class="fa-solid fa-user-gear"></i>Preferencias</h4>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-12">
                 <?php
-            }
-        ?>
+                    if(isset($error)){
+                        ?>
+                        <p>Debes fijar primero las preferencias</p>
+                        <?php
+                    }
+                ?>
 
-        <p><span class="fw-bold">Idioma</span>: <?php echo isset($_SESSION['idioma']) ? $_SESSION['idioma'] : 'No establecido' ?></p>
-        <p><span class="fw-bold">Perfil público</span>: <?php echo isset($_SESSION['perfil']) ? $_SESSION['perfil'] : 'No establecido' ?></p>
-        <p><span class="fw-bold">Zona horaria</span>: <?php echo isset($_SESSION['zona-horaria']) ? $_SESSION['zona-horaria'] : 'No establecido' ?></p>
+                <p><span class="fw-bold">Idioma: </span> <?php echo isset($_SESSION['idioma']) ? $_SESSION['idioma'] : 'No establecido' ?></p>
+                <p><span class="fw-bold">Perfil público: </span> <?php echo isset($_SESSION['perfil']) ? $_SESSION['perfil'] : 'No establecido' ?></p>
+                <p><span class="fw-bold">Zona horaria: </span><?php echo isset($_SESSION['zona-horaria']) ? $_SESSION['zona-horaria'] : 'No establecido' ?></p>
 
-        <form method="POST">
-            <button type="submit" class="btn btn-primary" name="establecer">Establecer</button>
-            <button type="submit" class="btn btn-danger" name="borrar">Borrar</button>
-        </form>
+                <form method="POST">
+                    <button type="submit" class="btn btn-primary" name="establecer">Establecer</button>
+                    <button type="submit" class="btn btn-danger" name="borrar">Borrar</button>
+                </form>
+            </div>
+        </div>
+        
+
     </div>
-
 
     <script src="https://kit.fontawesome.com/b9f164ad49.js" crossorigin="anonymous"></script>
 </body>
