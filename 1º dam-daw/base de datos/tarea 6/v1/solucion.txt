@@ -87,6 +87,11 @@ begin
     if :new.categoria = 0 and :new.oficina is not null and :new.familia is not null then
         raise_application_error(-20006,'Un agente no puede pertenecer a una oficina y a una familia a la vez');
     end if;
+    
+    IF ((:new.familia IS NOT NULL AND :new.oficina IS NOT NULL) OR (:new.familia IS NULL AND :new.oficina IS NULL)) THEN
+        raise_application_error(-20007,'Un agente debe pertenecer a una oficina o a una familia');
+    end if;
+    
 end;
 /
 
