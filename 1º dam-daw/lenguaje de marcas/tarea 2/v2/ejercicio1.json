@@ -1,0 +1,121 @@
+{
+    "empresa": {
+        "nombre": "Bicicletas S.A.",
+        "codigoCNAE": "2385",
+        "nif": "U37482734"
+    },
+    "tiendas": [
+        {
+            "id": 1,
+            "ciudad": "Ciudad Real",
+            "direccion": "Calle falsa 123",
+            "provincia": "Ciudad Real",
+            "fechaApertura": "2023-12-01",
+            "fechaAlta": "2023-01-01",
+            "bicicletas": [
+                {
+                    "talla": "s",
+                    "color": "roja",
+                    "tamanioRueda": 26,
+                    "unidadTamanio": "pulgadas",
+                    "marca": "Specialized",
+                    "precio": 500,
+                    "ofertas": [
+                        {
+                            "codigo": "BLACK_FRIDAY",
+                            "precio": 400,
+                            "descuento": 20,
+                            "tipo": "%",
+                            "inicio": "2023-11-23",
+                            "fin": "2023-11-25"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "ciudad": "Toledo",
+            "direccion": "Calle falsa 456",
+            "provincia": "Toledo",
+            "fechaApertura": "2023-11-01",
+            "fechaAlta": "2023-02-01",
+            "bicicletas": [
+                {
+                    "talla": "m",
+                    "color": "negra",
+                    "tamanioRueda": 27.5,
+                    "unidadTamanio": "pulgadas",
+                    "marca": "Scott",
+                    "precio": 600,
+                    "ofertas": [
+                        {
+                            "codigo": "NAVIDAD",
+                            "precio": 300,
+                            "descuento": 50,
+                            "tipo": "%",
+                            "inicio": "2023-12-25",
+                            "fin": "2023-12-31"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "ciudad": "Zaragoza",
+            "direccion": "Calle falsa 789",
+            "provincia": "Zaragoza",
+            "fechaApertura": "2023-07-01",
+            "fechaAlta": "2023-01-01",
+            "bicicletas": [
+                {
+                    "talla": "xl",
+                    "color": "amarilla",
+                    "tamanioRueda": 29,
+                    "unidadTamanio": "pulgadas",
+                    "marca": "Trek",
+                    "precio": 2000,
+                    "ofertas": [
+                        {
+                            "codigo": "ANIO_NUEVO",
+                            "precio": 1600,
+                            "descuento": 20,
+                            "tipo": "%",
+                            "inicio": "2024-01-01",
+                            "fin": "2024-01-07"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "ciudad": "Tokio",
+            "direccion": "Calle falsa 159",
+            "provincia": "Tokio",
+            "fechaApertura": "2023-05-01",
+            "fechaAlta": "2023-05-01",
+            "bicicletas": [
+                {
+                    "talla": "s",
+                    "color": "verde",
+                    "tamanioRueda": 27.5,
+                    "unidadTamanio": "pulgadas",
+                    "marca": "Specialized",
+                    "precio": 2500,
+                    "ofertas": [
+                        {
+                            "codigo": "BLACK_FRIDAY",
+                            "precio": 1250,
+                            "descuento": 50,
+                            "tipo": "%",
+                            "inicio": "2023-11-23",
+                            "fin": "2023-11-25"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

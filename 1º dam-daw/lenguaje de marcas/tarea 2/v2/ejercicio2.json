@@ -1,0 +1,100 @@
+{
+    "redSocial": {
+        "empresa": "Instagram",
+        "web": "https://instagram.com",
+        "direcciones": [
+            {
+                "direccion": "Calle falsa 456"
+            }
+        ]
+    },
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Fernando",
+            "apellido": "Ureña",
+            "email": "test@gmail.com",
+            "telefonos": [
+                {
+                    "tipo": "movil",
+                    "uso": "casa",
+                    "numero": "+34666888222"
+                },
+                {
+                    "tipo": "fijo",
+                    "uso": "trabajo",
+                    "numero": "+34986145214"
+                }
+            ],
+            "direccion": "Calle falsa 123",
+            "ocupacion": "Programador",
+            "fechaAlta": "2023-01-01",
+            "amigos": [
+                {
+                    "usuario": 2 
+                }
+            ],
+            "bloqueados": [
+                {
+                    "usuario": 3,
+                    "fecha": "2023-12-01"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Lekaytor",
+            "apellido": "Caballero",
+            "email": "lekaytor@gmail.com",
+            "telefonos": [
+                {
+                    "tipo": "movil",
+                    "uso": "casa",
+                    "numero": "+34621458964"
+                },
+                {
+                    "tipo": "fijo",
+                    "uso": "trabajo",
+                    "numero": "+34965823411"
+                }
+            ],
+            "direccion": "Calle falsa 142",
+            "ocupacion": "Programador",
+            "fechaAlta": "2023-01-02",
+            "amigos": [
+                {
+                    "usuario": 1 
+                }
+            ],
+            "bloqueados": [
+                {
+                    "usuario": 3,
+                    "fecha": "2023-12-01"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Elon",
+            "apellido": "musk",
+            "email": "elonmusk@gmail.com",
+            "telefonos": [
+                {
+                    "tipo": "movil",
+                    "uso": "casa",
+                    "numero": "+34654321654"
+                },
+                {
+                    "tipo": "fijo",
+                    "uso": "trabajo",
+                    "numero": "+34976543212"
+                }
+            ],
+            "direccion": "Calle falsa 789",
+            "ocupacion": "Programador",
+            "fechaAlta": "2023-01-01",
+            "amigos": [],
+            "bloqueados": []
+        }
+    ]
+}
