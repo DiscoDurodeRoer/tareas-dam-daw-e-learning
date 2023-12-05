@@ -27,6 +27,7 @@
 
                 $sql = "INSERT INTO PRODUCTOS (nombre, nombre_corto, descripcion, pvp, familia) VALUES('$nombre', '$nombreCorto', '$descripcion', $precio, '$familia')";
                 $insert = $conexion->query($sql);
+				// En PHP 8, tendras que comentar la siguiente linea
                 $insert->execute();
 
                 header('Location: listado.php');
