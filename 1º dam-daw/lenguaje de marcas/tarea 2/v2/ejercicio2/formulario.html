@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Cabecera -->
+    <header>
+        <h1>Libro 1</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="libro-1.html">Libro 1</a>
+                </li>
+                
+                <li>
+                    <a href="libro-2.html">Libro 2</a>
+                </li>
+                
+                <li>
+                    <a href="libro-3.html">Libro 3</a>
+                </li>
+                
+                <li>
+                    <a href="formulario.html">Formulario</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido -->
+    <main>
+
+        <!-- Formulario -->
+        <form action="#">
+
+            <!-- Datos personales -->
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos">
+
+                <label for="telefono">Telefono</label>
+                <input type="tel" name="telefono" id="telefono">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+
+            </fieldset>
+
+            <!-- Busqueda -->
+            <fieldset>
+                <legend>Busqueda</legend>
+
+                <label for="autor">Autor</label>
+                <input type="text" name="autor" id="autor">
+
+                <label for="titulo">Titulo</label>
+                <input type="text" name="titulo" id="titulo">
+
+                <label for="idioma">Idioma</label>
+                <select name="idioma" id="idioma">
+                    <option value="es">Español</option>
+                    <option value="en">Ingles</option>
+                    <option value="fr">Frances</option>
+                    <option value="it">Italiano</option>
+                </select>
+
+                <input type="checkbox" name="buscar" id="buscar-libro" value="libro">
+                <label for="buscar-libro">Libro</label>
+
+                <input type="checkbox" name="buscar" id="buscar-revista" value="revista">
+                <label for="buscar-revista">Revista</label>
+
+                <input type="checkbox" name="buscar" id="buscar-libroe" value="libroe">
+                <label for="buscar-libroe">Libro electronico</label>
+
+            </fieldset>
+
+            <!-- Ordenacion -->
+            <fieldset>
+                <legend>Ordenacion</legend>
+
+                <input type="radio" name="ordenacion" id="ordenacion-autor" value="autor" checked>
+                <label for="ordenacion-autor">Autor</label>
+
+                <input type="radio" name="ordenacion" id="ordenacion-titulo" value="titulo" >
+                <label for="ordenacion-titulo">Titulo</label>
+
+            </fieldset>
+
+            <!-- Comentarios -->
+            <fieldset>
+                <legend>Comentarios</legend>
+
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+
+            </fieldset>
+            
+            <!-- botones -->
+            <button type="submit">Enviar</button>
+            <button type="reset">Resetear</button>
+
+
+        </form>
+
+
+    </main>
+
+</body>
+</html>

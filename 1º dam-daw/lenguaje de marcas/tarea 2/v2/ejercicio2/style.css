@@ -1,0 +1,40 @@
+html {
+    background: #ccc;
+}
+
+body {
+    background: #FFF;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 5px;
+    list-style-type: none;
+}
+
+.wrapper-flex{
+    display: flex;
+    text-align: justify;
+}
+
+article {
+    flex: 2;
+    margin-right: 15px;
+}
+
+aside {
+    flex: 1;
+}

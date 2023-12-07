@@ -1,0 +1,32 @@
+html {
+    background: #ccc;
+}
+
+body {
+    background: #FFF;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+article section:first-child {
+    text-align: center;
+}
+
+article section p {
+    font-size: 22px;
+    text-align: justify;
+}
+
+article section ul li {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+img.pizza {
+    width: 300px;
+    padding: 5px;
+}
