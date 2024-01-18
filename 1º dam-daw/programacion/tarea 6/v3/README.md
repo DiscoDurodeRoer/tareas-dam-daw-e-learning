@@ -1,7 +1,8 @@
 
 # Tarea 6 programacion 
 
-Si te ha servido este repositorio, no te olvides de darle una estrella.
+Si te ha servido este repositorio, no te olvides de darle una estre
+lla.
 
 ## Enunciado
 
@@ -13,7 +14,9 @@ Los datos que se almacenarán sobre cada alumno son:
 - Teléfono.
 - Dirección.
 - Nota media.
+
 Mediante un menú se podrán realizar determinadas operaciones:
+
 - Añadir alumno. Esta opción pedirá los datos del alumno y añadirá el registro correspondiente en el fichero.
 - Listar alumnos. Recorrerá el fichero mostrando los alumnos almacenados en el mismo.
 - Buscar alumnos. Pedirá al usuario el NIF del alumno a buscar, y comprobará si existe en el fichero.
