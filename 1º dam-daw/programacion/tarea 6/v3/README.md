@@ -1,7 +1,7 @@
 
 # Tarea 6 programacion 
 
-[Video](https://youtu.be/tFbmv89YSWY)
+Youtube: https://youtu.be/tFbmv89YSWY
 
 Si te ha servido este repositorio, no te olvides de darle una estre
 lla.
