@@ -6,7 +6,7 @@ Si te ha servido este repositorio, no te olvides de darle una estrella.
 
 ## Enunciado
 
-En el proyecto Java "Deposito", hay definida una Clase Ilamada CCuenta, que tiene una serie de atributos y métodos. El proyecto cuenta asimismo con una Clase /Uain, donde se hace uso de la clase descrita.
+En el proyecto Java "Deposito", hay definida una Clase Ilamada CCuenta, que tiene una serie de atributos y métodos. El proyecto cuenta asimismo con una Clase Main, donde se hace uso de la clase descrita.
 
 Basándonos en ese proyecto, vamos a realizar las siguientes actividades.
 
