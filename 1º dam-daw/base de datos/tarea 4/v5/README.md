@@ -38,7 +38,13 @@ Si te ha servido este repositorio, no te olvides de darle una estrella.
 
 16. (Sin subconsultas, solo combinando tablas) Datos de todos los productos que ha pedido el cliente Luis Garcia Perez. 
 
-17. Producto del que más unidades se han pedido 18. Datos del producto más caro del pedido 1 19. Datos del producto más caro de cada pedido (con una consulta correlacionada) 20. Para cada cliente, mostrar los datos de su pedido cuyo importe total sea superior al importe total medio de todos sus pedidos. 
+17. Producto del que más unidades se han pedido 
+
+18. Datos del producto más caro del pedido 1 
+
+19. Datos del producto más caro de cada pedido (con una consulta correlacionada) 
+
+20. Para cada cliente, mostrar los datos de su pedido cuyo importe total sea superior al importe total medio de todos sus pedidos. 
 
 21. Código de cada cliente menor de 30 años y cantidad total que se ha gastado en 2023 (incluidos gastos de envío) 
 
