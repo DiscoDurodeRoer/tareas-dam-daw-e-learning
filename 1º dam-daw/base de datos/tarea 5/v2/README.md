@@ -36,4 +36,6 @@ confirma definitivamente los cambios realizados, si no, repítelos y confírmalo
 
 12. Ejecuta y justifica las acciones necesarias para borrar al cliente insertado en el ejercicio 1. 
 
-13. Modifica la cantidad del producto de la línea 1 del pedido 10, y realiza las actualizaciones necesarias para que los datos del pedido sean correctos teniendo en cuenta la modificación realizada. 14. Modifica el producto HDD Y. Explica a qué tablas afecta, en qué, y por qué.
+13. Modifica la cantidad del producto de la línea 1 del pedido 10, y realiza las actualizaciones necesarias para que los datos del pedido sean correctos teniendo en cuenta la modificación realizada.
+
+14. Modifica el producto HDD Y. Explica a qué tablas afecta, en qué, y por qué.
