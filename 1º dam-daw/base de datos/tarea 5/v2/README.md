@@ -1,6 +1,6 @@
 # Tarea 5 base de datos 
 
-Yotube: https://youtu.be/cl5UuZKDz7k
+Youtube: https://youtu.be/cl5UuZKDz7k
 
 Si te ha servido este repositorio, no te olvides de darle una estrella.
 
