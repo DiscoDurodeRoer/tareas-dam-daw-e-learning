@@ -6,7 +6,12 @@ Si te ha servido este repositorio, no te olvides de darle una estrella.
 
 ## Enunciado
 
-1. Insertar en la tabla jornadas dos nuevos registros (jornadas 7 y 8) , a celebrarse el 28 de marzo de 2015 y el 5 de abril de 2015 respectivamente, ambas en la localidad de Plasencia y en horario de Tarde. 
+1. Insertar en la tabla jornadas dos nuevos registros (jornadas 7 y 8) , a celebrarse el 28 de marzo de 2015 y el 5 de abril de 2015 respectivamente, ambas en la localidad de Plasencia y en horario de Tarde.
+
+| IDJORNADA | LOCALIDAD | HORARIO | FECHA |
+|---|---|---|---|
+| 7 | Plasencia | T | 28 de Marzo de 2015 |
+| 8 | Plasencia | T | 5 de Abrik de 2015 |
 
 2. Modificar la tabla jornadas añadiendo un nuevo campo denominado “Provincia”, que solo podrá tener valores ‘BA’ o ‘CC’. Posteriormente realizar las operaciones necesarias para almacenar la provincia según la localidad que tenga asignada cada jornada. 
 
@@ -30,6 +35,23 @@ d. Deshacer los cambios efectuados hasta ahora.
 
 e. Visualizar la tabla equipos ordenada por idequipo y nombre (para comprobar que los registros afectados por la transación que hemos deshecho no se han borrado). 
 
-f. En caso de que hubíesemos decidido hacer permanentes los cambios producidos en la transación, ¿que sentencia tendríamos que haber ejecutado y en que apartado de los anteriores?. 8.- Crear tres nuevos campos en la tabla Equipos a los que llamaremos “Enc_Ganados”, “Enc_Empatados” y “Enc_Perdidos” y almacenar en ellos la información obtenida de los encuentros disputados. (En base a la tabla encuentros y teniendo en cuenta que el encuentro está ganado si los puntos obtenidos es igual a 3, se empata si los puntos obtenidos son 2 y se pierde si los puntos obtenidos es igual a 1). En “Enc_Ganados”, “Enc_Empatados” y “Enc_Perdidos” se almacenará el número de encuentros correspondientes para cada uno de los equipos. Se aconseja asignarles un valor por defecto de 0 al crear estos campos. Comprobación: Salida de la tabla una vez creados y actualizados los campos: (Ordenado por idequipo)
+f. En caso de que hubíesemos decidido hacer permanentes los cambios producidos en la transación, ¿que sentencia tendríamos que haber ejecutado y en que apartado de los anteriores?. 
+
+8. Crear tres nuevos campos en la tabla Equipos a los que llamaremos “Enc_Ganados”, “Enc_Empatados” y “Enc_Perdidos” y almacenar en ellos la información obtenida de los encuentros disputados. (En base a la tabla encuentros y teniendo en cuenta que el encuentro está ganado si los puntos obtenidos es igual a 3, se empata si los puntos obtenidos son 2 y se pierde si los puntos obtenidos es igual a 1). En “Enc_Ganados”, “Enc_Empatados” y “Enc_Perdidos” se almacenará el número de encuentros correspondientes para cada uno de los equipos. Se aconseja asignarles un valor por defecto de 0 al crear estos campos. Comprobación: Salida de la tabla una vez creados y actualizados los campos: (Ordenado por idequipo)
+
+| IDEQUIPO | NOMBREEQUIPO | ENC_GANADOS | ENC_EMPATADOS | ENC_PERDIDOS |
+|---|---|---|---|---|
+| 1 | Pacense | 2 | 0 | 3 |
+| 2 | Don Benito | 1 | 2 | 2 |
+| 3 | Moralo | 2 | 2 | 1 |
+| 4 | Magic | 1 | 3 | 1 |
+| 5 | Caceres | 1 | 1 | 3 |
+| 6 | Placentino | 3 | 2 | 0 |
+| 7 | Zafra | 2 | 0 | 3 |
+| 8 | Coria | 2 | 2 | 1 |
+| 9 | PuertaPalma | 0 | 3 | 2 |
+| 10 | Ateneo | 3 | 1 | 1 |
+| 11 | Castuera | 1 | 2 | 2 |
+| 12 | Olivenza | 2 | 2 | 1 |
 
 9. Escribir una sentencia que nos permita borrar los tres campos “Enc_Ganados”, “Enc_Empatados” y “Enc_Perdidos” creados anteriormente en la tabla equipos. (Realizar la operación con una sola sentencia que afecte a los tres campos).
