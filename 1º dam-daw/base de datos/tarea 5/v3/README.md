@@ -11,7 +11,7 @@ Si te ha servido este repositorio, no te olvides de darle una estrella.
 | IDJORNADA | LOCALIDAD | HORARIO | FECHA |
 |---|---|---|---|
 | 7 | Plasencia | T | 28 de Marzo de 2015 |
-| 8 | Plasencia | T | 5 de Abrik de 2015 |
+| 8 | Plasencia | T | 5 de Abril de 2015 |
 
 2. Modificar la tabla jornadas añadiendo un nuevo campo denominado “Provincia”, que solo podrá tener valores ‘BA’ o ‘CC’. Posteriormente realizar las operaciones necesarias para almacenar la provincia según la localidad que tenga asignada cada jornada. 
 
