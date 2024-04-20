@@ -65,7 +65,7 @@ WHERE idjugador NOT IN (SELECT distinct idjugador from enc_jugadores);
 
 -- 7
 
-SET TRANSACTION;
+SET TRANSACTION READ WRITE;
 
 -- a
 
