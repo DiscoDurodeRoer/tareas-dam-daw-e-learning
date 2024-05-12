@@ -1,0 +1,8 @@
+Concierto 
+Concierto{nombre=concierto3, fecha=2023-12-01, artista=codigo=5, nombre=artista1, numIntegrantes=5, estilo=rock, cache=100.0, estilo=rock, asistentes=[codigo=1, nombre=asistente1,dni=1234A, fechaNacimiento=1990-02-05]}
+Concierto{nombre=concierto1, fecha=2024-01-01, artista=codigo=2, nombre=artista2, numIntegrantes=2, estilo=jazz, cache=20.0, estilo=jazz, asistentes=[codigo=1, nombre=asistente1,dni=1234A, fechaNacimiento=1990-02-05]}
+Concierto{nombre=concierto4, fecha=2025-01-01, artista=codigo=2, nombre=artista2, numIntegrantes=2, estilo=jazz, cache=20.0, estilo=jazz, asistentes=[]}
+Asistentes 
+codigo=1, nombre=asistente1,dni=1234A, fechaNacimiento=1990-02-05
+codigo=7, nombre=asistente1,dni=159753C, fechaNacimiento=1995-03-25
+codigo=10, nombre=asistente1,dni=6789B, fechaNacimiento=2000-08-15
